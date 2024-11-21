@@ -19,27 +19,16 @@
 	Product Admin CSS Template
 	https://templatemo.com/tm-524-product-admin
 	-->
-    <?php
-      session_start();
-      require_once("Models/clsLogin.php");
-      $login =false;
-      if(isset($_REQUEST["login"])==true)
-      {
-        $login = $_REQUEST["login"];
-      }
-      if($login==false)
-      {
-    ?>
-    <script>
-      var login = document.getElementById("loginPage");
-      login.onload = function()
-      {
-        confirm("PLEASE ENTER AGAIN!");
-      }
-    </script>
-    <?php
-      }
-    ?>
+   
+   <script>
+  window.onload = function () {
+    <?php if (!$login) { ?>
+      confirm("PLEASE ENTER AGAIN!");
+    <?php } ?>
+  };
+</script>
+
+ 
   </head>
 
   <body id="loginPage">
